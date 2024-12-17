@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- highcharts links -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+  <!-- internal js link -->
+  <script src="/kukin project/script.js"></script>
+
+  <!-- googlefonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- fontawosome cdn links -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- external style sheet link -->
+  <link rel="stylesheet" href="style.css">
+
+  <title>kukin dashboard</title>
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <!-- navbar -->
+  <nav class=" navbar-expand-md navbar navbar-light">
+    <div class="container-fluid pe-0">
+      <a href="" class="navbar-brand ms-4 me-5 ">
+        <img src="https://assets.staticimg.com/cms/media/4J58N99wagZ6tdGo5z4o7URB3fwcDAVZaMu0eXfi8.svg">
+      </a>
+      <button class="navbar-toggler bg-dark p-2 rounded-circle me-3" type="button" data-bs-toggle="collapse"
+        data-bs-target="#nav-items">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="nav-items">
+        <ul class="navbar-nav me-auto text-end mb-lg-0 fs-5 ">
+          <li class="nav-item dropdown ms-3">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Buy crypto
+            </a>
+            <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Fast Trade</a></li>
+              <li><a class="dropdown-item" href="#">P2P</a></li>
+              <li><a class="dropdown-item" href="#">Fiat Depisite</a></li>
+              <li><a class="dropdown-item" href="#">Third-Party</a></li>
+            </ul>
+          </li>
+          <li class="nav-item ms-3"><a href="#" class="nav-link ">Market</a></li>
+          <li class="nav-item dropdown ms-3">
+            <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Trade
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Spot Trading</a></li>
+              <li><a class="dropdown-item" href="#">Margin Trading</a></li>
+              <li><a class="dropdown-item" href="#">Convert</a></li>
+              <li><a class="dropdown-item" href="#">API Services</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown ms-3">
+            <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Derivatives
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Future Overview</a></li>
+              <li><a class="dropdown-item" href="#">USD</a></li>
+              <li><a class="dropdown-item" href="#">Future Perks</a></li>
+              <li><a class="dropdown-item" href="#">Levegared Tokens</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown ms-3">
+            <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Earn
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Saving</a></li>
+              <li><a class="dropdown-item" href="#">Stacking</a></li>
+              <li><a class="dropdown-item" href="#">Promtions</a></li>
+              <li><a class="dropdown-item" href="#">KCS Stacking</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex gap-2 " id="">
+          <input class="form-control rounded-pill pt-0 pb-0 bg-dark text-light" type="search" placeholder="Search"
+            aria-label="Search">
+          <img src="https://assets-currency.kucoin.com/6731d3ff58fbd500015a60fa_logo%20%2828%29.png" width="33px"
+            height="30px" class="img-fluid lh-2">
+          <button class="bg-dark rounded-circle border-none ">
+            <a href="">
+              <i class="fa-regular fa-bell"></i>
+            </a>
+          </button>
+          <button class="btn form-button " type="button">Add Funds</button>
+        </form>
+      </div>
+    </div>
+    </div>
+  </nav>
+<!-- all main content -->
+  <div class="d-flex m-3 gap-2 mb-0">
+    <!-- sidebar -->
+    <aside class="d-flex flex-column flex-shrink-0 p-3 text-white sidebars " style="width: 280px; height: 90vh;">
+      <ul class="nav nav-pills sidebar-content flex-column mt-3">
+        <li>
+          <a href="#" class="nav-link activ mb-0" aria-current="page">
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link pt-4 ">
+            Security
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link">
+            Identify Verification
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link ">
+            API Management
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link ">
+            Sub-accounts
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link">
+            Export history
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <!-- main content-->
+    <div class="w-100 all-main-content">
+      <!-- header -->
+      <header class="header-content align-items-center p-4 mb-2 shadow-lg ">
+        <div class="d-flex">
+          <div class="  d-flex align-items-start gap-3 highlight-section-items me-auto">
+            <img src="https://assets-currency.kucoin.com/6731d3ff58fbd500015a60fa_logo%20%2828%29.png" width="64px">
+            <div>
+              <p class="mb-2">Welcome</p>
+              <h4>Brooklyn Simmons</h4>
+            </div>
+          </div>
+          <div class="header-button">
+            <button class="me-3 bg-dark" type="button">Hide-info</button>
+          </div>
+        </div>
+        <div class="d-flex mt-3 gap-3 flex-column flex-md-row w-100">
+          <div class="p-2  header-child">
+            <p class="">UID</p>
+            <div class="d-flex justify-content-between">
+              <h5 class="fw-normal fs-md-5 fs-lg-5 mb-0">19458560</h5>
+              <a href="" class="text-decoration-none"><i class="fa-regular fa-copy fs-5 "></i></a>
+            </div>
+          </div>
+          <div class="p-2  header-child">
+            <p class="">Identify Verification</p>
+
+            <h4 class="fw-normal fs-5">
+              <a href="" class="text-decoration-none"><i class="fa-solid fa-circle-exclamation"></i></a> Unverified
+            </h4>
+
+          </div>
+          <div class="p-2  header-child">
+            <p class="">Security</p>
+            <div class="d-flex justify-content-between">
+              <h4 class="fw-normal fs-5">Low</h4>
+              <a href="" class="text-decoration-none"><i class="fa-solid fa-angle-down fs-5"></i></a>
+            </div>
+          </div>
+          <div class="p-2  header-child">
+            <p class="">Time zone</p>
+            <h4 class="fw-normal fs-5">UTC +8 Singapore</h4>
+          </div>
+          <div class="p-2  header-child">
+            <p class="">Last login </p>
+            <div class="d-flex justify-content-between">
+              <h4 class="fw-normal fs-5">22-03-2024 &nbsp;12:00 PM</h4>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- section 3 section jo hain wo ha is div ma main content-->
+      <div class="row m-0 gap-4 px-3">
+        <!-- first card -->
+        <div class="col p-4 main-section-cards">
+          <div class=" d-flex justify-content-around">
+            <button class="btn p-2 px-3 text-light fs-5 article-butn" type="button">Buy crypto</button>
+            <button class="btn p-2 px-3 text-light fs-5 article-butn " type="button">Buy crypto</button>
+            <button class="btn p-2 px-3 text-light fs-5 article-butn" type="button">Buy crypto</button>
+          </div>
+          <div class=" mt-3">
+            <div class="row main-card1 mx-2 p-3 position-relative">
+              <div class="col">
+                <a href="" class="text-decoration-none">
+                  <h4 class="my-5 fw-normal  mt-3">Total accet</h4>
+                </a>
+                <div class="position-absolute bottom-0 start-1">
+                  <p class="fw-bold h3">0.17554271 BTC</p>
+                  <P>$3.37567 USD</P>
+                </div>
+              </div>
+              <img src="/accets/kjkjk.png" class="col jhj align-self-center">
+            </div>
+          </div>
+        </div>
+        <!-- 2nd card -->
+        <div class="col p-4 pb-0 main-section-cards">
+          <h3 class="mb-4">Deposite or buy Crypto through these methods.</h3>
+          <!-- upper-card -->
+          <div class="p-4 d-flex position-relative buy-crypto">
+            <div class=" me-3 dollor-icon rounded-circle p-3">
+              <i class="fa-solid fa-hand-holding-dollar "></i>
+            </div>
+            <div class="align-self-center secdiv-content">
+              <h5>Buy Crypto</h5>
+              <p class="mb-0">Local currency payment</p>
+            </div>
+            <div class="position-absolute end-0 me-3 align-self-center fa-arrow-up-div" onclick="conf()">
+              <i class="fa-solid fa-arrow-up fa-arrow-ups"></i>
+            </div>
+          </div>
+          <!-- lower card 2 -->
+          <div class="mt-3">
+            <div class="p-4 d-flex position-relative buy-crypto">
+              <div class=" me-3 dollor-icon2 rounded-circle p-3">
+                <i class="fa-solid fa-coins"></i>
+              </div>
+              <div class="align-self-center secdiv-content">
+                <h5>Deposite</h5>
+                <p class="mb-0">Deposite crypto or that</p>
+              </div>
+              <div class="position-absolute end-0 me-3 align-self-center fa-arrow-up-div">
+                <i class="fa-solid fa-arrow-up fa-arrow-ups "></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 3rd card-->
+        <div class="col pb-0  main-section-cards p-4">
+          <!-- header -->
+          <div class="d-flex justify-content-between end-card-header mb-2">
+            <h4><i class="fa-brands fa-connectdevelop"></i> VIP Lv-O</h4>
+            <a href="#" class=" hover fs-5">View more <i class="fa-solid fa-arrow-up fa-arrow-upe "></i></a>
+          </div>
+          <!-- paragharaph -->
+          <div class="d-flex align-items-center">
+            <i class="fa-solid fa-circle ms-1"></i>
+            <p class="ms-4 m-0 third-card-p"> Play free with KCS</p>
+          </div>
+          <!-- 2 cards -->
+          <div class="row my-3 gap-3 m-0 flex-nowrap">
+            <div class="col p-3 spot-free-rate">
+              <p>Spot Free rate</p>
+              <div class="d-flex spot-free-rate-child ">
+                <h3 class="">0.22%</h3>
+                <h3 class="ps-3">0.22%</h3>
+              </div>
+            </div>
+            <div class="col p-3 spot-free-rate">
+              <p>Future Free rate</p>
+              <div class="d-flex spot-free-rate-child">
+                <h3 class="">0.02%</h3>
+                <h3 class="ps-3">0.06%</h3>
+              </div>
+            </div>
+          </div>
+          <!-- accordian  -->
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item bg-transparent">
+              <h2 class="accordion-header " id="headingOne">
+                <button class="accordion-button w-50 bg-transparent ps-0" type=button data-bs-toggle="collapse"
+                  data-bs-target="#KCS-hidden" aria-expanded="true" aria-controls="collapseOne">
+
+                  <h4 class=" bg-transparent mb-0">KCS holdings</h4>
+
+                </button>
+              </h2>
+              <div id="KCS-hidden" class="accordion-collapse collapse show " aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body p-0">
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 35%" aria-valuenow="25" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+                  <div class="d-flex gap-4 my-3 third-card-footer mb-0">
+                    <p>Lv.0</p>
+                    <p>Increase tou KCS holding by 1000 KCS to upgrade to the next level.</p>
+                    <p>Lv.0</p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <!--footer  -->
+      <div class="row m-0 mt-3 gap-4 px-3 ">
+        <!-- left-div market wala -->
+        <div class="col left-footer p-3">
+          <div class="d-flex justify-content-between end-card-header mb-2">
+            <h4>Market</h4>
+            <a href="#" class=" hover fs-5">View more <i class="fa-solid fa-arrow-up fa-arrow-upe "></i></a>
+          </div>
+          <button class="btn left-footer-button px-4 py-2 mb-4">Favorities</button>
+          <button class="btn btn left-footer-button px-4 py-2 mb-4" style="color: #9fabb6;">Home</button>
+          <!-- <div class="d-flex justify-content-between  p-3 pb-1 mt-3 left-footer">
+            <p>Coin</p>                      before table row 
+            <p>Price</p>
+            <p>24h Change</p>
+            <p>4h trend</p>
+            <p>Action</p>
+          </div> -->
+
+
+          <!--highcharts spline chart start  -->
+          <div id="scrolling-container ">
+            <table id="table-sparkline " class="w-100">
+              <thead class="">
+                <tr class="table-data  ">
+                  <th class="p-3">Coin</th>
+                  <th>Price</th>
+                  <th>24h Change</th>
+                  <th>4h trend</th>
+                  <th class="text-center ">Action</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-sparkline">
+                <tr class="table-data ">
+                  <th class="p-3 my-3">Bitcoin</th>
+                  <td>66,926.74</td>
+                  <td>+2.7%</td>
+                  <td data-sparkline="71, 78, 39, 66 " />
+                  <td  class="text-center "><button class="chart-button p-2 px-3">Trade <i class="fa-solid fa-angle-down ms-2"></i></button></td>
+                </tr>
+                <tr class="table-data">
+                  <th class="p-3">Bitcoin</th>
+                  <td>66,926.74</td>
+                  <td>+2.7%</td>
+                  <td data-sparkline="7, 38, 12, 6 , 38, 12, 6 , 21, 90, 21, 56, 90" />
+                  <td  class="text-center "><button class="chart-button p-2 px-3">Trade <i class="fa-solid fa-angle-down ms-2"></i></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- splinechart end -->
+
+        </div>
+        <!-- right section  -->
+        <div class="col-4 d-flex justify-content-between p-3 footer-right-section">
+          <div class="mt-4">
+            <h3 class="text-nowrap">KuCoint Affiliate Program</h3>
+            <p class="mb-5">invite Friends and get 20% commisions.</p>
+          <button class="btn left-footer-button p-3 mt-4 border-light text-light" onclick="fun()">Apply now</button>
+          </div>
+          <div class="img mt-5">
+            <a href="#">
+              <img src="/accets/img60px.png" width="140px" class=" align-self-center">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- internal js -->
+  <script>
+    Highcharts.SparkLine = function (a, b, c) {
+      const hasRenderToArg = typeof a === 'string' || a.nodeName;
+      let options = arguments[hasRenderToArg ? 1 : 0];
+      const defaultOptions = {
+        chart: {
+          renderTo: (
+            (options.chart && options.chart.renderTo) ||
+            (hasRenderToArg && a)
+          ),
+          backgroundColor: null,
+          borderWidth: 0,
+          type: 'line',
+          margin: [2, 0, 2, 0],
+          width: 120,
+          height: 20,
+          style: {
+            overflow: 'visible'
+          },
+          // small optimalization, saves 1-2 ms each sparkline
+          skipClone: true
+        },
+        title: {
+          text: ''
+        },
+        credits: {
+          enabled: false
+        },
+        xAxis: {
+          labels: {
+            enabled: false
+          },
+          title: {
+            text: null
+          },
+          startOnTick: false,
+          endOnTick: false,
+          tickPositions: []
+        },
+        yAxis: {
+          endOnTick: false,
+          startOnTick: false,
+          labels: {
+            enabled: false
+          },
+          title: {
+            text: null
+          },
+          tickPositions: [0]
+        },
+        legend: {
+          enabled: false
+        },
+        tooltip: {
+          hideDelay: 0,
+          outside: true,
+          shared: true
+        },
+        plotOptions: {
+          series: {
+            animation: false,
+            lineWidth: 1,
+            shadow: false,
+            states: {
+              hover: {
+                lineWidth: 1
+              }
+            },
+            marker: {
+              radius: 1,
+              states: {
+                hover: {
+                  radius: 2
+                }
+              }
+            },
+            fillOpacity: 0.25
+          },
+          // column: {
+          //     negativeColor: '#910000',
+          //     borderColor: 'silver'
+          // }
+        }
+      };
+
+      options = Highcharts.merge(defaultOptions, options);
+
+      return hasRenderToArg ?
+        new Highcharts.Chart(a, options, c) :
+        new Highcharts.Chart(options, b);
+    };
+
+    const start = +new Date(),
+      tds = Array.from(document.querySelectorAll('td[data-sparkline]')),
+      fullLen = tds.length;
+
+    let n = 0;
+
+    // Creating 153 sparkline charts is quite fast in modern browsers, but mobile
+    // can take some seconds, so we split the input into chunks and
+    // apply them in timeouts in order avoid locking up the browser process
+    // and allow interaction.
+    function doChunk() {
+      const time = +new Date(),
+        len = tds.length;
+
+      for (let i = 0; i < len; i += 1) {
+        const td = tds[i];
+        const stringdata = td.dataset.sparkline;
+        const arr = stringdata.split('; ');
+        const data = arr[0].split(', ').map(parseFloat);
+        const chart = {};
+
+        if (arr[1]) {
+          chart.type = arr[1];
+        }
+
+        Highcharts.SparkLine(td, {
+          series: [{
+            data: data,
+            pointStart: 1
+          }],
+          tooltip: {
+            headerFormat: '<span style="font-size: 10px">' +
+              td.parentElement.querySelector('th').innerText +
+              ', Q{point.x}:</span><br/>',
+            pointFormat: '<b>{point.y}.000</b> USD'
+          },
+          chart: chart
+        });
+
+        n += 1;
+
+        // If the process takes too much time, run a timeout
+        // to allow interaction with the browser
+        if (new Date() - time > 500) {
+          tds.splice(0, i + 1);
+          setTimeout(doChunk, 0);
+          break;
+        }
+
+        // Print a feedback on the performance
+        if (n === fullLen) {
+          document.getElementById('result').innerHTML =
+            'Generated ' +
+            fullLen +
+            ' sparklines in ' +
+            (new Date() - start) + ' ms';
+        }
+      }
+    }
+    doChunk();
+
+    // apply now button onclick event
+    function fun(){
+      alert("Welcome");
+    };
+function conf(){
+ a = confirm("So you want to see your Trade");
+  if(a==true){
+    alert("there is network problem please try again later ");
+  }
+  else{
+    alert("see you next time");
+  };
+};
+
+  </script>
+</body>
+
+</html>
